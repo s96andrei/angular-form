@@ -50,7 +50,7 @@ export class FormComponent {
 
     // Navigate to the home page after 2 seconds
     setTimeout(() => {
-      this.router.navigate(['/home']);
+      this.router.navigate(['/password']);
     }, 2000);
   }
 }
