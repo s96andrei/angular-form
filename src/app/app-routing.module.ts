@@ -6,8 +6,9 @@ import { LoginComponent } from './login/login.component';
 
 
 const appRoute: Routes = [
-  { path: '', component: LoginComponent },
-  { path: 'home', component: PasswordGeneratorComponent },
+  // { path: '', component: LoginComponent },
+  { path: '', redirectTo: 'home', pathMatch: 'full' }, // temporary setup
+  { path: 'home',  component: PasswordGeneratorComponent },
   { path: 'form', component: FormComponent }
 ];
 
