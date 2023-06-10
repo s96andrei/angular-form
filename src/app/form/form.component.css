@@ -1,0 +1,69 @@
+ .container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-top: 50px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.form-inputs {
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  font-weight: bold;
+}
+
+textarea {
+  resize: none;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 4px;
+}
+
+.form-control.ng-touched.ng-invalid {
+  border: 2px solid red;
+}
+
+/* Add margin to the form controls */
+.form-control {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+button {
+  width: fit-content;
+  margin: 0 auto;
+  padding: 10px 20px;
+  border: none;
+  background-color: #4caf50;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}

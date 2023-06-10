@@ -1,0 +1,66 @@
+<app-nav-bar></app-nav-bar>
+
+<div class="container">
+  <h1>User feedback</h1>
+  <form [formGroup]="myForm" (ngSubmit)="onSubmit()" class="form-inputs">
+    <div class="form-group">
+      <label for="userName">Name: </label>
+      <input
+        required
+        minlength="3"
+        maxlength="30"
+        type="text"
+        [formControl]="userNameControl"
+        name="userName"
+        class="form-control"
+      />
+      <div
+        class="alert alert-danger"
+        *ngIf="userNameControl.touched && userNameControl.invalid"
+      >
+        <div *ngIf="userNameControl.hasError('required')">Name is required</div>
+        <div *ngIf="userNameControl.hasError('minlength')">
+          Name should be minimum {{ userNameControl.getError('minlength').requiredLength }} characters
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="email">Email: </label>
+      <input
+        required
+        type="email"
+        [formControl]="emailControl"
+        name="email"
+        class="form-control"
+      />
+      <div class="alert alert-danger" *ngIf="emailControl.touched && emailControl.invalid">
+        <div *ngIf="emailControl.hasError('required')">Email is required</div>
+        <div *ngIf="emailControl.hasError('pattern')">Please enter a valid email address</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="comment">Comment: </label>
+      <textarea
+        required
+        type="text"
+        rows="10"
+        cols="30"
+        [formControl]="commentControl"
+        name="comment"
+        class="form-control"
+      ></textarea>
+      <div
+        class="alert alert-danger"
+        *ngIf="commentControl.touched && commentControl.invalid"
+      >
+        Comment is required
+      </div>
+    </div>
+    <button class="btn btn-primary" type="submit" [disabled]="!myForm.valid" >Submit</button>
+  </form>
+
+  <!-- Success message -->
+  <div *ngIf="isSubmitted" class="alert alert-success my-3">
+    Thank you for your feedback!
+  </div>
+</div>
